@@ -18,7 +18,7 @@ public class GeradorCPFFunction {
 	}
 	
 	public GeradorCPFFunction validarCorretude() {
-		//TODO VALIDAR
+		page.validationIcon();
 		return this;
 	}
 	

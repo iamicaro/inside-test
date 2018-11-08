@@ -20,6 +20,7 @@ public class GeradorCPFPage {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 		config.getExtendedWebDriver().xpath(XPATH_NUMERO_CPF, cpf);
+		config.getReport().addStep("Número de CPF utilizado: " + cpf);
 	}
 
 	public void clickValidar() {
@@ -30,6 +31,9 @@ public class GeradorCPFPage {
 		if(!config.getExtendedWebDriver().exists(XPATH_ICON_VALIDATION)) {
 			throw new RuntimeException("Não foi possível validar o CPF: " + cpf);
 		}
+		
+		config.getReport().addStep("Validado com sucesso.", config.getExtendedWebDriver().getWebElement(XPATH_ICON_VALIDATION));
+		
 	}
 	
 }

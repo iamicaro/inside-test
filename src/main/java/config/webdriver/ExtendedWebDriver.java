@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -32,6 +33,10 @@ public class ExtendedWebDriver {
 	public void keys(final String name, final Keys value) {
 		driver.findElement(By.name(name)).click();
 		driver.findElement(By.name(name)).sendKeys(value);
+	}
+	
+	public WebElement getWebElement(final String xpath) {
+		return driver.findElement(By.xpath(xpath));
 	}
 	
 	public void click(final String xpath) {
